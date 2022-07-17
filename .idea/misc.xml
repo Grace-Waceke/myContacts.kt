@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_error_24.xml" value="0.1695" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_view_contact.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/layout/contact_list_items.xml" value="0.25" />
       </map>
     </option>

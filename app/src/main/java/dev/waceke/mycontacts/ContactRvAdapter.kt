@@ -1,10 +1,12 @@
 package dev.waceke.mycontacts
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
@@ -16,7 +18,7 @@ class ContactRvAdapter(var  contactlist: List<Contact>): RecyclerView.Adapter<Co
         var binding =
         ContactListItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         var contactsViewHolder = ContactsViewHolder(binding)
-        return  contactsViewHolder
+        return  ContactsViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
@@ -32,8 +34,17 @@ class ContactRvAdapter(var  contactlist: List<Contact>): RecyclerView.Adapter<Co
             .centerCrop()
 //            .networkPolicy(NetworkPolicy.OFFLINE)
             .into(holder.binding.ivContacts)
-
-
+        val context=holder.itemView.context
+        holder.binding.ivContacts.setOnClickListener {
+      Toast.makeText(context,"you have clicked on ${currentContact.name}'s image", Toast.LENGTH_SHORT).show()
+  }
+        holder.binding.cvContacts.setOnClickListener {
+            val intent = Intent(context, ViewContactActivity::class.java)
+            intent.putExtra("NAME", currentContact.name)
+            intent.putExtra("EMAIL", currentContact.email)
+            intent.putExtra("IMAGE",currentContact.image)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
