@@ -28,14 +28,14 @@
         app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <TextView
-        android:id="@+id/tvNames"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Waceke Mwangi"
+        android:id="@+id/tvName"
+        android:layout_width="61dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivImage" />
 
@@ -54,22 +54,22 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNames"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
         app:srcCompat="@drawable/ic_baseline_phone_24" />
 
     <ImageView
         android:id="@+id/ivMessage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="204dp"
         app:layout_constraintStart_toEndOf="@+id/ivCall"
-        app:layout_constraintTop_toBottomOf="@+id/tvNames"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
         app:srcCompat="@drawable/ic_baseline_comment_24" />
 
     <ImageView
@@ -87,8 +87,8 @@
 
     <TextView
         android:id="@+id/tvCall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="57dp"
+        android:layout_height="25dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="20dp"
         android:text="call"
@@ -99,7 +99,7 @@
         android:id="@+id/tvMessage"
         android:layout_width="51dp"
         android:layout_height="24dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="20dp"
         android:text="text"
         app:layout_constraintStart_toEndOf="@+id/tvCall"
@@ -114,4 +114,39 @@
         android:text="setup"
         app:layout_constraintStart_toEndOf="@+id/tvMessage"
         app:layout_constraintTop_toBottomOf="@+id/ivVideo" />
+
+    <TextView
+        android:id="@+id/tvPhonenumber"
+        android:layout_width="67dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvMail"
+        android:layout_width="76dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvPhonenumber"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhonenumber" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="68dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toEndOf="@+id/tvMail"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhonenumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>

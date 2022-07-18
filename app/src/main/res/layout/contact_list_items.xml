@@ -25,30 +25,16 @@
             app:srcCompat="@drawable/ic_baseline_person_24" />
 
         <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toEndOf="@+id/ivContacts"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Waceke Mwangi" />
-
-        <TextView
             android:id="@+id/tvContact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="0712345678"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.037"
             app:layout_constraintStart_toEndOf="@+id/ivContacts"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            tools:layout_editor_absoluteY="35dp" />
 
         <TextView
             android:id="@+id/tvEmail"
@@ -78,5 +64,18 @@
             app:layout_constraintStart_toEndOf="@+id/ivContacts"
             app:layout_constraintTop_toBottomOf="@+id/tvEmail"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Waceke Mwangi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

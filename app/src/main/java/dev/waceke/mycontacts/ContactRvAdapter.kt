@@ -18,12 +18,12 @@ class ContactRvAdapter(var  contactlist: List<Contact>): RecyclerView.Adapter<Co
         var binding =
         ContactListItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         var contactsViewHolder = ContactsViewHolder(binding)
-        return  ContactsViewHolder(binding)
+        return  contactsViewHolder
     }
 
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
         var currentContact = contactlist.get(position)
-        holder.binding.tvName.text = currentContact.name
+        holder.binding.tvPerson.text = currentContact.name
         holder.binding.tvContact.text = currentContact.phoneNumber
         holder.binding.tvEmail.text = currentContact.email
         holder.binding.tvAddress.text = currentContact.address
@@ -40,9 +40,11 @@ class ContactRvAdapter(var  contactlist: List<Contact>): RecyclerView.Adapter<Co
   }
         holder.binding.cvContacts.setOnClickListener {
             val intent = Intent(context, ViewContactActivity::class.java)
-            intent.putExtra("NAME", currentContact.name)
+            intent.putExtra("PERSON", currentContact.name)
             intent.putExtra("EMAIL", currentContact.email)
-            intent.putExtra("IMAGE",currentContact.image)
+            intent.putExtra("CONTACT",currentContact.phoneNumber)
+            intent.putExtra("ADDRESS",currentContact.address)
+
             context.startActivity(intent)
         }
     }
@@ -55,10 +57,3 @@ class ContactRvAdapter(var  contactlist: List<Contact>): RecyclerView.Adapter<Co
 }
 
 class ContactsViewHolder(var binding: ContactListItemsBinding): RecyclerView.ViewHolder(binding.root)
-//    var tvName = itemView.findViewById<TextView>(R.id.tvName)
-//    var tvContact = itemView.findViewById<TextView>(R.id.tvContact)
-//    var tvEmail = itemView.findViewById<TextView>(R.id.tvEmail)
-//    var tvAddress= itemView.findViewById<TextView>(R.id.tvAddress)
-//    var ivContacts = itemView.findViewById<ImageView>(R.id.ivContacts)
-
-//}

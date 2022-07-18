@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import dev.waceke.mycontacts.databinding.ActivityViewContactBinding
+import java.util.jar.Attributes
 
 class ViewContactActivity : AppCompatActivity() {
     lateinit var binding: ActivityViewContactBinding
@@ -16,7 +17,6 @@ class ViewContactActivity : AppCompatActivity() {
     }
     fun getExtras(){
         val extras = intent.extras
-        val name =extras?.getString("NAME","")
         val  image=extras?.getString("IMAGE","")
         Picasso.get().load(image)
             .placeholder(R.drawable.ic_baseline_person_24)
@@ -25,23 +25,19 @@ class ViewContactActivity : AppCompatActivity() {
             .centerCrop()
 //            .networkPolicy(NetworkPolicy.OFFLINE)
             .into(binding.ivImage)
-        var email= extras?.getString("EMAIL","")
-        var call = extras?.getString("CALL", "")
-        var message = extras?.getString("MESSAGE", "")
-        var video = extras?.getString("VIDEO", "")
-        var names = extras?.getString("NAMES", "")
+        val person=extras?.getString("NAME","")
+        binding.tvName.text = person
+        val contact = extras?.getString("CONTACT", "")
+        binding.tvPhonenumber.text = contact
+        val email = extras?.getString("EMAIL", "")
+        binding.tvMail.text = email
+        val address = extras?.getString("ADDRESS", "")
+        binding.tvLocation.text = address
 
 
-        Toast.makeText(this, "$name: $email", Toast.LENGTH_SHORT).show()
-//        Toast.makeText(this, call, Toast.LENGTH_SHORT).show()
-//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-//        Toast.makeText(this, video, Toast.LENGTH_SHORT).show()
-//        Toast.makeText(this, names, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "$person: $email", Toast.LENGTH_LONG).show()
 
-         binding.tvCall.text = call
-         binding.tvMessage.text = message
-        binding.tvVideo.text = video
-        binding.tvNames.text = names
+
 
     }
 }
